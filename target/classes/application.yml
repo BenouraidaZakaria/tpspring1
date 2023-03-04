@@ -1,12 +1,7 @@
-server:
-  port: 8082
+Spring:
+      profiles:
+        active: local
 
-spring:
-  datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://localhost:1433;databaseName=pfe;integratedSecurity=true
-    username:
-    password:
-
-
-
+#Logging:
+#      level:
+#          org: DEBUG
