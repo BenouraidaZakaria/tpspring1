@@ -7,3 +7,7 @@ spring:
     url: jdbc:sqlserver://localhost:1433;databaseName=pfe;integratedSecurity=true
     username:
     password:
+
+logging:
+  level:
+    ma.geo: ERROR

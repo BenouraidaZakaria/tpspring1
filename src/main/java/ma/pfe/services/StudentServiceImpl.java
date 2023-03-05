@@ -6,7 +6,6 @@ import ma.pfe.repositories.StudentRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,16 +13,14 @@ import java.util.List;
 @Component
 public class StudentServiceImpl implements StudentService{
     private final static Logger LOG= LoggerFactory.getLogger(StudentServiceImpl.class);
-    @Autowired
     private StudentRepository repository;
-    @Autowired
     private StudentMapper mapper;
 
     @Override
-    public StudentDTO create(StudentDTO dto) {
+    public StudentDTO save(StudentDTO dto) {
 //        return mapper.convertToDTO(repository.create(mapper.convertToEntity(dto)));
         LOG.debug("Start  create");
-        StudentDTO result= mapper.convertToDTO(repository.create(mapper.convertToEntity(dto)));
+        StudentDTO result= mapper.convertToDTO(repository.save(mapper.convertToEntity(dto)));
         LOG.debug("end  create");
         return result;
     }

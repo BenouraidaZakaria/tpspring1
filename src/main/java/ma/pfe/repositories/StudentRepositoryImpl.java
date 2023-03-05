@@ -11,7 +11,7 @@ import java.util.List;
 public class StudentRepositoryImpl implements StudentRepository{
     private final static Logger LOG= LoggerFactory.getLogger(StudentServiceImpl.class);
     @Override
-    public StudentEntity create(StudentEntity entity) {
+    public StudentEntity save(StudentEntity entity) {
 //        return null;
         LOG.debug("Start  create");
         StudentEntity result= null;
