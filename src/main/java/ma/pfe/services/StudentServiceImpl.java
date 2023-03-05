@@ -4,6 +4,7 @@ import ma.pfe.dtos.StudentDTO;
 import ma.pfe.mappers.StudentMapper;
 import ma.pfe.repositories.StudentRepository;
 
+import ma.pfe.repositories.StudentRepositoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -13,8 +14,8 @@ import java.util.List;
 @Component
 public class StudentServiceImpl implements StudentService{
     private final static Logger LOG= LoggerFactory.getLogger(StudentServiceImpl.class);
-    private StudentRepository repository;
-    private StudentMapper mapper;
+    private StudentRepository repository = new StudentRepositoryImpl();
+    private StudentMapper mapper=new StudentMapper();
 
     @Override
     public StudentDTO save(StudentDTO dto) {
