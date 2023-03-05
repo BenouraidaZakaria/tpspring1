@@ -1,7 +1,4 @@
 Spring:
       profiles:
-        active: local
+        active: dev
 
-#Logging:
-#      level:
-#          org: DEBUG

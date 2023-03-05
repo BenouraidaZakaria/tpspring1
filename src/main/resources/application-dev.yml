@@ -1,5 +1,7 @@
 server:
   port: 8083
+  servlet:
+    context-path: /api
 
 spring:
   datasource:
@@ -7,3 +9,8 @@ spring:
     url: jdbc:sqlserver://localhost:1433;databaseName=pfe;integratedSecurity=true
     username:
     password:
+
+logging:
+  level:
+    ma.pfe: ERROR
+    org.springframework.web: DEBUG
