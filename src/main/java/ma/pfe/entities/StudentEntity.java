@@ -1,22 +1,30 @@
 package ma.pfe.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class StudentEntity {
-    @Id
-    private long id;
+    @EmbeddedId
+    private StudentId studentId;
+    @Column(name="name_student")
     private String name;
 
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name="rue", column=@Column(name="rue")),
+            @AttributeOverride(name="avenue", column=@Column(name="avenue")),
+            @AttributeOverride(name="num", column=@Column(name="num"))
+    })
+    private Adresse adresse;
 
-    public long getId() {
-        return id;
+
+    public StudentId getStudentId() {
+        return studentId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setStudentId(StudentId studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {
@@ -27,11 +35,11 @@ public class StudentEntity {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "StudentEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
     }
 }

@@ -1,14 +1,30 @@
 package ma.pfe.dtos;
 
+import ma.pfe.entities.Adresse;
+import ma.pfe.entities.StudentId;
+
 public class StudentDTO {
-    private long id;
+    private StudentId sid;
     private String name;
-    public long getId() {
-        return id;
+    private Adresse adresse;
+
+    public StudentId getSid() {
+        return sid;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setSid(StudentId sid) {
+        this.sid = sid;
+    }
+
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
+    }
+
+    public StudentDTO() {
     }
 
     public String getName() {
@@ -22,7 +38,7 @@ public class StudentDTO {
     @Override
     public String toString() {
         return "StudentDTO{" +
-                "id=" + id +
+                "id=" +sid+
                 ", name='" + name + '\'' +
                 '}';
     }
