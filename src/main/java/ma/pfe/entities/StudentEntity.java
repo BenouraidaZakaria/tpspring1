@@ -1,6 +1,7 @@
 package ma.pfe.entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -18,6 +19,27 @@ public class StudentEntity {
     })
     private Adresse adresse;
 
+    @ManyToMany
+    private List<CourseEntity> courses;
+
+    @ManyToOne
+    @JoinColumn(name="fk_niveau_id")
+    private NiveauEntity niveau;
+
+    public NiveauEntity getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(NiveauEntity niveau) {
+        this.niveau = niveau;
+    }
+    public List<CourseEntity> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<CourseEntity> courses) {
+        this.courses = courses;
+    }
 
     public StudentId getStudentId() {
         return studentId;
